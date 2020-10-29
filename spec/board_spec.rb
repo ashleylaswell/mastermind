@@ -40,5 +40,24 @@ module Mastermind
 				expect(board.get_cell(0, 1)).to eq "red"
 			end
 		end
+		context "#set_cell" do
+			it "updates the value of the cell at specified coordinate" do
+				Color = Struct.new(:value)
+				grid = [
+					["", Color.new("red"), "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""]]
+				board = Board.new(grid: grid)
+				board.set_cell(0, 1, "orange")
+				expect(board.get_cell(0, 1).value).to eq "orange"
+			end
+		end
 	end
 end
