@@ -15,7 +15,7 @@ module Mastermind
 
 		def game_over
 			return :winner if winner?
-			return :lost if lost?
+			return :out_of_turns if out_of_turns?
 			false
 		end
 
