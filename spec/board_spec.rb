@@ -23,5 +23,22 @@ module Mastermind
 				expect(board.grid).to eq "blah"
 			end
 		end
+		context "#get_cell" do
+			it "returns the cell based on the coordinate" do
+				grid = [
+					["", "red", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""], 
+					["", "", "", ""]]
+				board = Board.new(grid: grid)
+				expect(board.get_cell(0, 1)).to eq "red"
+			end
+		end
 	end
 end
