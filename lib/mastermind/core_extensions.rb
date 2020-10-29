@@ -19,4 +19,7 @@ class Array
 	def right_color_wrong_position
 
 	end
+	def full_match?
+
+	end
 end
