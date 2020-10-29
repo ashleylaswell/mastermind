@@ -9,4 +9,14 @@ class Array
 	def none_empty?
 		!any_empty?
 	end
+	def already_guessed?
+
+	end
+	def right_color_right_position
+
+	end
+
+	def right_color_wrong_position
+
+	end
 end
