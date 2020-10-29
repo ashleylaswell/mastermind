@@ -59,5 +59,24 @@ module Mastermind
 				expect(board.get_cell(0, 1).value).to eq "orange"
 			end
 		end
+		context "#game_over" do
+			it "returns :winner if winner? is true" do
+				board = Board.new
+				allow(board).to receive(:winner?) { true }
+				expect(board.game_over).to eq :winner
+			end
+			it "returns :out_of_turns if winner is false and if out_of_turns? is true" do
+				board = Board.new
+				allow(board).to receive(:winner?) { false }
+				allow(board).to receive(:out_of_turns?) { true }
+				expect(board.game_over).to eq :out_of_turns
+			end
+			it "returns :winner if winner? is true" do
+				board = Board.new
+				allow(board).to receive(:winner?) { false }
+				allow(board).to receive(:out_of_turns?) { false }
+				expect(board.game_over).to be_falsey
+			end
+		end
 	end
 end
