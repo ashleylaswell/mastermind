@@ -7,6 +7,10 @@ module Mastermind
 				cell = Cell.new
 				expect(cell.value).to eq ""
 			end
+			it "can be initialized with a color" do
+				cell = Cell.new("red")
+				expect(cell.value).to eq "red"
+			end
 		end
 	end
 end
