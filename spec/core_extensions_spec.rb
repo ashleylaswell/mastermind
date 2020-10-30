@@ -34,4 +34,12 @@ describe Array do
 			expect([].none_empty?).to be_falsey
 		end
 	end
+	context "#uniq?" do
+		it "returns false for no repeating guesses" do
+			expect(["1", "2", "3", "4"].uniq?).to be_truthy
+		end
+		it "returns true if there are repeated guesses" do
+			expect(["1", "1", "3", "4"].uniq?).to be_falsey
+		end
+	end
 end
