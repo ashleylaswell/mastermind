@@ -9,8 +9,8 @@ class Array
 	def none_empty?
 		!any_empty?
 	end
-	def already_guessed?
-
+	def uniq?
+		self.length == self.uniq.length
 	end
 	def right_color_right_position
 
