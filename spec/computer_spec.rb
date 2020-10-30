@@ -2,10 +2,8 @@ require "spec_helper"
 
 describe Computer do
 	context "#initialize" do
-		it do
+		it "raises an exception when initializedd with {}" do
+			expect { Computer.new({}) }.to raise_error
 		end
 	end
-	context "#computer_colors" do
-		it do
-		end
 end
