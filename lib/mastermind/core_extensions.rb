@@ -12,14 +12,4 @@ class Array
 	def uniq?
 		self.length == self.uniq.length
 	end
-	def right_color_right_position?
-
-	end
-
-	def right_color_wrong_position?
-
-	end
-	def full_match?
-
-	end
 end
