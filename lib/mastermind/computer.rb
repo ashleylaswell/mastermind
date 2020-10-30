@@ -11,7 +11,6 @@ module Mastermind
 			randomize_colors = color_array.sort { rand() -0.5 }
 			randomize_colors[0..3]
 		end
-		
 	end
 end
 
