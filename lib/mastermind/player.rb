@@ -1,11 +1,8 @@
 module Mastermind
 	class Player
-		attr_reader :first_input, :second_input, :third_input, :fourth_input, :name
+		attr_reader :player_array, :name
 		def initialize(input)
-			@first_input = input.fetch(:first_input)
-			@second_input = input.fetch(:second_input)
-			@third_input = input.fetch(:third_input)
-			@fourth_input = input.fetch(:fourth_input)
+			@player_array = input.fetch(:player_array)
 			@name = input.fetch(:name)
 		end
 	end
