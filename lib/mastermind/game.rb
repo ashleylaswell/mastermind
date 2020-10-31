@@ -1,4 +1,4 @@
-module TicTacToe
+module Mastermind
 	class Game
 		attr_reader :players, :board, :computer, :human
 		def initialize(players, board = Board.new)
