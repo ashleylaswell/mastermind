@@ -24,5 +24,9 @@ module Mastermind
 		def default_grid
 			Array.new(10) { Array.new(4) { Cell.new } }
 		end
+
+		def winner?
+			computer_array == player_array
+		end
 	end
 end
