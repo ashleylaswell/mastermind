@@ -13,6 +13,14 @@ module Mastermind
 			get_cell(x, y).value = value
 		end
 
+		def set_player_array(x, y, guess_number, player_array)
+			guess_number = 0
+			while guess_number < 4
+				get_cell(x, y).value = player_array[guess_number]
+			end
+			guess_number += 1
+		end
+
 		def game_over
 			return :winner if winner?
 			return :out_of_turns if out_of_turns?
