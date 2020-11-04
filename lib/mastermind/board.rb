@@ -15,10 +15,6 @@ module Mastermind
 			get_cell(x, y).value = value
 		end
 
-		def set_player_array()
-
-		end
-
 		def game_over
 			return :winner if winner?
 			return :out_of_turns if out_of_turns?
