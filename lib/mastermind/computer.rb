@@ -13,6 +13,3 @@ module Mastermind
 		end
 	end
 end
-
-
-
