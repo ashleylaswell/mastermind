@@ -1,6 +1,6 @@
 module Mastermind
 	class Computer
-		attr_accessor :computer_array
+		attr_reader :computer_array
 
 		def initialize(input = {} )
 			@computer_array = input.fetch(:computer_array, computer_colors)
