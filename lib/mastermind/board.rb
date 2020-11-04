@@ -1,10 +1,8 @@
 module Mastermind
 	class Board
-		attr_reader :grid, :str
-		attr_accessor :player_array
+		attr_reader :grid
 		def initialize(input = {})
 			@grid = input.fetch(:grid, default_grid)
-			@player_array = Array.new(4)
 		end
 
 		def get_cell(x, y)
