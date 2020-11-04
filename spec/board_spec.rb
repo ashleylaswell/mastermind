@@ -59,6 +59,7 @@ module Mastermind
 				expect(board.get_cell(0, 1).value).to eq "orange"
 			end
 		end
+
 		context "#game_over" do
 			it "returns :winner if winner? is true" do
 				board = Board.new

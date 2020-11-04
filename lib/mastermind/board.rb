@@ -1,8 +1,10 @@
 module Mastermind
 	class Board
-		attr_reader :grid
+		attr_reader :grid, :str
+		attr_accessor :player_array
 		def initialize(input = {})
 			@grid = input.fetch(:grid, default_grid)
+			@player_array = Array.new(4)
 		end
 
 		def get_cell(x, y)
@@ -13,12 +15,8 @@ module Mastermind
 			get_cell(x, y).value = value
 		end
 
-		def set_player_array(x, y, guess_number, player_array)
-			guess_number = 0
-			while guess_number < 4
-				get_cell(x, y).value = player_array[guess_number]
-			end
-			guess_number += 1
+		def set_player_array()
+
 		end
 
 		def game_over
