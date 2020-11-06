@@ -11,5 +11,9 @@ module Mastermind
 			randomize_colors = color_array.sort { rand() -0.5 }
 			randomize_colors[0..3]
 		end
+
+		def print_computer_array
+			puts computer_array
+		end
 	end
 end
