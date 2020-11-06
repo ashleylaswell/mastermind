@@ -21,6 +21,10 @@ module Mastermind
 			puts human.player_array
 		end
 
+		def winner?
+			human.player_array = computer.computer_array
+		end
+
 		def play(turn)
 			print_computer_array
 			while turn < 10
