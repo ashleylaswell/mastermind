@@ -29,6 +29,28 @@ module Mastermind
 			turn <= 10
 		end
 
+		def correct_positions
+			computer_array = computer.computer_array
+			player_array = human.player_array
+			correct_position = 0
+			wrong_position = 0
+
+			i = 0
+			while i < computer_array.length do
+				while i < player_array.length do
+					if computer_array[i] == player_array[i]
+						correct_position += 1
+					elsif computer_array.include?(player_array[i])
+						wrong_position += 1
+					end
+					i += 1
+				end
+				i += 1
+			end
+			puts "There are #{correct_position} correct colors in the correct position"
+			puts "There are #{wrong_position} correct colors in the wrong position"
+		end
+
 		def play(turn)
 			print_computer_array
 			while turn < 10
