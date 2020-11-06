@@ -25,6 +25,10 @@ module Mastermind
 			human.player_array = computer.computer_array
 		end
 
+		def turns_left?
+			turn <= 10
+		end
+
 		def play(turn)
 			print_computer_array
 			while turn < 10
