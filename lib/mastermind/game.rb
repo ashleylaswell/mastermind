@@ -13,6 +13,14 @@ module Mastermind
 			puts "#{human.name}: Enter your moves:"
 		end
 
+		def print_computer_array
+			puts computer.computer_array
+		end
+
+		def print_player_array
+			puts human.player_array
+		end
+
 		def play(turn)
 			print_computer_array
 			while turn < 10
