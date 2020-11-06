@@ -65,6 +65,13 @@ module Mastermind
 			puts "There are #{wrong_position} correct colors in the wrong position"
 		end
 
+		def try_again
+			puts "Try again"
+			add_turn
+			human.clear_player_array
+			human.get_player_array(human.guess)
+		end
+
 		def play(turn)
 			print_computer_array
 			while turn < 10
