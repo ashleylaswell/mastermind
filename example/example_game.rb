@@ -9,5 +9,4 @@ ashley = Mastermind::Player.new({name: "ashley"})
 computer = Mastermind::Computer.new
 
 players = [ashley, computer]
-game = Mastermind::Game.new(players)
-game.play(game.turn)
+Mastermind::Game.new(players).play
