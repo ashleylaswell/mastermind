@@ -72,6 +72,11 @@ module Mastermind
 			human.get_player_array(human.guess)
 		end
 
+		def game_over_message
+			return "you won!" if game_over == :winner
+			return "you are out of turns" if game_over == :loser
+		end
+
 		def play(turn)
 			print_computer_array
 			while turn < 10
