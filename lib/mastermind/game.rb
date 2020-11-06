@@ -77,19 +77,18 @@ module Mastermind
 			return "you are out of turns" if game_over == :loser
 		end
 
-		def play(turn)
+		def play
 			print_computer_array
-			while turn < 10
-				solicit_move
-				human.get_player_array
-				if human.player_array == computer.computer_array
-					puts "you win"
+			solicit_move
+			human.get_player_array(human.guess)
+			while turns_left?
+				if game_over
+					puts game_over_message
 					return
 				else
-					puts "try again"
-					human.clear_player_array
+					correct_positions
+					try_again
 				end
-				turn += 1
 			end
 		end
 	end
