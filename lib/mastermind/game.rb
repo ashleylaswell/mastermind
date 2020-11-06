@@ -29,6 +29,10 @@ module Mastermind
 			turn <= 10
 		end
 
+		def add_turn
+			@turn += 1
+		end
+
 		def loser?
 			turn == 10 and winner? == false
 		end
