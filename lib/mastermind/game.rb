@@ -17,12 +17,8 @@ module Mastermind
 			puts computer.computer_array
 		end
 
-		def print_player_array
-			puts human.player_array
-		end
-
 		def winner?
-			human.player_array = computer.computer_array
+			human.player_array == computer.computer_array
 		end
 
 		def turns_left?
