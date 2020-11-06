@@ -1,42 +1,32 @@
 module Mastermind
 	class Game
-		attr_reader :players, :board, :computer, :human
+		attr_reader :players, :human, :computer, :player_array, :turn
+		
 		def initialize(players, board = Board.new)
-			@players = players
+			@players = :players
 			@board = board
-			@computer = computer
-			@human = human
+			@human, @computer = players
+			@turn = 0
 		end
 
 		def solicit_move
-			"#{human.name}: Enter a color and press enter. Do this 4 times."
+			puts "#{human.name}: Enter your moves:"
 		end
 
-		def get_move(human_move = gets.chomp)
-			human_move_to_array(human_move)
-		end
-
-		def game_over_message
-			return "You won!" if board.game_over == :winner
-			return "you lost :(" if board.game_over == :out_of_turns
-		end
-
-		def play
-			puts "Your choices of colors are red(1), orange(2), yellow(3), green(4), blue(5), and pink(6)"
-		end
-
-		private
-
-		def human_move_to_array(human_move)
-			mapping = {
-				"1" => "red",
-				"2" => "orange",
-				"3" => "yellow",
-				"4" => "green",
-				"5" => "blue",
-				"6" => "pink"
-			}
-			mapping[human_move]
+		def play(turn)
+			print_computer_array
+			while turn < 10
+				solicit_move
+				human.get_player_array
+				if human.player_array == computer.computer_array
+					puts "you win"
+					return
+				else
+					puts "try again"
+					human.clear_player_array
+				end
+				turn += 1
+			end
 		end
 	end
 end
