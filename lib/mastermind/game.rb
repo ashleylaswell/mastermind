@@ -33,6 +33,12 @@ module Mastermind
 			turn == 10 and winner? == false
 		end
 
+		def game_over
+			return :winner if winner?
+			return :loser if loser?
+			false
+		end
+
 		def correct_positions
 			computer_array = computer.computer_array
 			player_array = human.player_array
